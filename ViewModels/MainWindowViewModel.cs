@@ -23,8 +23,10 @@ public class MainWindowViewModel : ViewModelBase
 
     private void ShowNotification()
     {
-        var message = _notificationService.GetCurrentTimeMessage();
-        _notificationService.ShowNotification("Notificação", message);
+        var now = DateTime.Now;
+        var title = $"System Notification - {now:HH:mm:ss}";
+        var message = $"Current system time: {now:dddd, MMMM dd, yyyy 'at' HH:mm:ss}";
+        _notificationService.ShowNotification(title, message);
     }
 }
 
