@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:CrossPlatformNotification.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+        x:Class="CrossPlatformNotification.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Cross Platform Notification"
+        Width="400" Height="300"
+        WindowStartupLocation="CenterScreen">
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    
+    <Button Grid.Row="1"
+            Content="Exibir Notificação"
+            Command="{Binding ShowNotificationCommand}"
+            HorizontalAlignment="Center"
+            Padding="20,10"
+            FontSize="16"/>
+  </Grid>
+  
+</Window>
